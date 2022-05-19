@@ -1,0 +1,19 @@
+$phoneHeight: 812px;
+$phoneWidth: 375px;
+$tabletHeight: 1080px;
+$tabletWidth: 810px;
+$desktopHeight: 1920px;
+$desktopWidth: 1080px;
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        background-image: url('../img/tobias-keller-73F4pKoUkM0-unsplash.jpg');
+    }
+}
