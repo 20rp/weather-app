@@ -36,33 +36,35 @@
         </div>
     </div>
     <!-- <p id="demo"></p>
-    <p id="demo2"></p>
-    <p id="demo3"></p>
     <script>
-        document.getElementById("demo").innerHTML = jsonObject.location.name;
-        document.getElementById("demo2").innerHTML = obj.location.region;
-        document.getElementById("demo3").innerHTML = obj.location.localtime;
+        document.getElementById("demo").innerHTML = weatherCurrentParsed.current.condition.text;
     </script> -->
 
     <div id="main row">
         <div id="location" class="pt-sm-5">
-            <img src="img/sun.png" alt="Sunny" style="height: 100px; margin-bottom: 5%;">
-            <h1> Taradale, Hawke's Bay <br> </h1>
+            <img id="weatherImage" src="" alt="" style="height: 100px; margin-bottom: 5%;">
+            <script> document.getElementById("weatherImage").src = document.getElementById("weatherImage").innerHTML = weatherCurrentParsed.current.condition.icon; </script>
+            <script> document.getElementById("weatherImage").alt = document.getElementById("weatherImage").innerHTML = weatherCurrentParsed.current.condition.text; </script>
+
+            <h1 id="locationHeader"> <script> document.getElementById("locationHeader").innerHTML = weatherLocationParsed.location.name; </script>, Hawke's Bay <br> </h1>
+            <h5 id="currentTime"> The current local time is </h5>
+            <script> document.getElementById("currentTime").innerHTML = weatherLocationParsed.location.localtime </script>
         </div>
         <div class="weatherdata">
             <div id="forecast" class="pt-sm-5">
-                <h2> Weather is fine, overcast in evening <br> </h2>
+                <h2 id="locationCurrent"> <script> document.getElementById("locationCurrent").innerHTML = weatherCurrentParsed.current.condition.text; </script> </h2>
+                <h5> Wind Direction </h5> <h6 id="windDir"> </h2>
+                <script> document.getElementById("windDir").innerHTML = weatherCurrentParsed.current.wind_dir </script>
             </div>
             <div id="weather" class="pt-sm-5">
-                <h2> 19 Degrees Celcius </h2>
+                <h2 id="currentTemp"> <script> document.getElementById("currentTemp").innerHTML = weatherCurrentParsed.current.temp_c </script> Degrees Celcius </h2>
+                <h2> Current Wind Speed </h2>
+                <h2 id="currentWind"><script> document.getElementById("currentWind").innerHTML = weatherCurrentParsed.current.wind_kph </script> K/ph </h2>
+                <h2> Relative Humidity </h2>
+                <h2 id="relHumidity"> <script> document.getElementById("relHumidity").innerHTML = weatherCurrentParsed.current.humidity </script> </h2>         
             </div>
         </div>
     </div>
     </div>
-
-
-
-
 </body>
-
 </html>
