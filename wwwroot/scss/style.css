@@ -12,7 +12,7 @@ body {
 }
 
 .weatherdata {
-  background-color: rgba(128, 122, 122, 0.8);
+  background-color: rgba(255, 255, 255, 0.6);
   padding-top: 5%;
   padding-bottom: 12%;
   border-radius: 15px;
@@ -25,14 +25,14 @@ body {
 .col-4 {
   position: relative;
   border: 2px solid #c0bfbf;
-  background-color: #a5a5a5;
+  background-color: #d0d0d0;
   padding: 8px 10px 5px 10px;
   border-radius: 5px;
   top: -5px;
 }
 
 #background-banner {
-  background-color: rgba(128, 122, 122, 0.8);
+  background-color: rgba(255, 255, 255, 0.6);
   z-index: -1;
   border-bottom: solid 0.2em #c0bfbf;
   width: 100%;
@@ -51,7 +51,7 @@ body {
   padding-top: 10%;
   padding-bottom: 10%;
   text-align: center;
-  background-color: rgba(128, 122, 122, 0.8);
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 25px;
 }
 
@@ -81,4 +81,3 @@ body {
     background-size: cover;
   }
 }
-/*# sourceMappingURL=style.css.map */
