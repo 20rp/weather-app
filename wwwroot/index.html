@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="scss/style.css">
-    <script src="wwwroot\js\test_response.json"></script>
     <script src="js/site.js"></script>
     <!-- <script src="wwwroot/js/site.js"></script> -->
     <title>Weather App</title>
@@ -37,16 +36,16 @@
     </div>
     <!-- <p id="demo"></p>
     <script>
-        document.getElementById("demo").innerHTML = weatherCurrentParsed.current.condition.text;
+        document.getElementById("demo").innerHTML = result.location.name;
     </script> -->
 
     <div id="main row">
         <div id="location" class="pt-sm-5">
             <img id="weatherImage" src="" alt="" style="height: 100px; margin-bottom: 5%;">
             <script> document.getElementById("weatherImage").src = document.getElementById("weatherImage").innerHTML = weatherCurrentParsed.current.condition.icon; </script>
-            <script> document.getElementById("weatherImage").alt = document.getElementById("weatherImage").innerHTML = weatherCurrentParsed.current.condition.text; </script>
+            <script> document.getElementById("weatherImage").alt = document.getElementById("weatherImage").innerHTML = response.location.country; </script>
 
-            <h1 id="locationHeader"> <script> document.getElementById("locationHeader").innerHTML = weatherLocationParsed.location.name; </script>, Hawke's Bay <br> </h1>
+            <h1 id="locationHeader"> <script> document.getElementById("locationHeader").innerHTML = result.location.name; </script>, Hawke's Bay <br> </h1>
             <h5 id="currentTime"> The current local time is </h5>
             <script> document.getElementById("currentTime").innerHTML = weatherLocationParsed.location.localtime </script>
         </div>
