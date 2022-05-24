@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url("../img/lighthouse-93488_1280.jpg");
+  background: url("../img/lighthouse-93488_1280.jpg") no-repeat center fixed;
   background-size: cover;
   /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
@@ -14,7 +14,7 @@ body {
 .weatherdata {
   background-color: rgba(255, 255, 255, 0.6);
   padding-top: 5%;
-  padding-bottom: 12%;
+  padding-bottom: 5%;
   border-radius: 15px;
 }
 
@@ -39,28 +39,24 @@ body {
   height: 3.5em;
 }
 
-#locations {
-  /* border: 1px solid rgba(192, 191, 191); */
-  z-index: 1;
-  padding-top: 0.5em;
-}
-
 #location {
-  margin-top: 20%;
-  margin-bottom: 10%;
-  padding-top: 10%;
-  padding-bottom: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 25px;
 }
 
 #forecast {
-  margin-top: 10%;
-  margin-bottom: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
   text-align: center;
   padding-left: 5%;
   padding-right: 5%;
+  padding-top: 10%;
+  padding-bottom: 5%;
   border-radius: 25px;
 }
 
@@ -81,3 +77,4 @@ body {
     background-size: cover;
   }
 }
+/*# sourceMappingURL=style.css.map */

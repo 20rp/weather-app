@@ -20,7 +20,7 @@
 
 
 
-function getData () {
+function getData() {
 
     let result = '';
 
@@ -33,4 +33,8 @@ function getData () {
     return result;
 }
 getData();
+
+function aysnc populateElements() {
+    await document.getElementById("demo").innerHTML = result.location.name;
+}
 

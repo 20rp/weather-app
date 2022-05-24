@@ -7,9 +7,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="scss/style.css">
-    <script src="js/site.js"></script>
+    <!-- <script src="js/site.js"></script> -->
     <!-- <script src="wwwroot/js/site.js"></script> -->
-    <title>Weather App</title>
+    <title>New Weather App</title>
+
+    <script>
+
+        let locationName = "taradale";
+        const lineBreak = document.createElement('br');
+
+        let apiUrl = "http://api.weatherapi.com/v1/current.json?key=5068a32470324e3b963231912221905&q=" + locationName + "&aqi=no";
+        console.log(apiUrl);
+
+        const weatherCall = async () => {
+            let _res;
+            try {
+                const res = await fetch(apiUrl);
+                _res = await res.json();
+            } catch {
+                throw new Error("Error, call did not succeed");
+            }
+            return _res;
+        }
+
+        weatherCall().then(res => {
+            document.getElementById("locationHeader").innerText = res.location.name;
+            document.getElementById("locationHeader").append(", " + res.location.region)
+
+            document.getElementById("country").innerText = res.location.country;
+
+            document.getElementById("currentTime").innerText = res.location.localtime;
+            document.getElementById("currentTime").prepend("The current local time is: ");
+
+
+            document.getElementById("weatherImage").src = res.current.condition.icon;
+
+            document.getElementById("currentTemp").innerText = res.current.temp_c;
+            document.getElementById("currentTemp").append(" Degrees Celcius");
+
+
+            document.getElementById("locationCurrent").innerText = res.current.condition.text;
+            document.getElementById("windDir").innerText = res.current.wind_dir;
+            document.getElementById("windDir").prepend("Wind Direction: ");
+
+            document.getElementById("currentWind").innerText = res.current.wind_kph;
+            document.getElementById("currentWind").prepend("Wind speed: ");
+            document.getElementById("currentWind").append(" K/ph");
+
+            document.getElementById("relHumidity").innerText = res.current.humidity;
+            document.getElementById("relHumidity").prepend("Relative Humidity: ");
+            document.getElementById("relHumidity").append("%");
+        })
+    </script>
+
 </head>
 
 <body>
@@ -17,7 +67,7 @@
         <div id="locations" class="container">
             <div class="row">
                 <div class="col-4 btn-primary" style="text-align: left;">
-                    <a href="">
+                    <a href="index.html">
                         <h5> Auckland </h5>
                     </a>
                 </div>
@@ -34,36 +84,24 @@
             </div>
         </div>
     </div>
-    <!-- <p id="demo"></p>
-    <script>
-        document.getElementById("demo").innerHTML = result.location.name;
-    </script> -->
+    <!-- <p id="demo"></p> -->
 
-    <div id="main row">
+    <div id="row">
         <div id="location" class="pt-sm-5">
-            <img id="weatherImage" src="" alt="" style="height: 100px; margin-bottom: 5%;">
-            <script> document.getElementById("weatherImage").src = document.getElementById("weatherImage").innerHTML = weatherCurrentParsed.current.condition.icon; </script>
-            <script> document.getElementById("weatherImage").alt = document.getElementById("weatherImage").innerHTML = response.location.country; </script>
-
-            <h1 id="locationHeader"> <script> document.getElementById("locationHeader").innerHTML = result.location.name; </script>, Hawke's Bay <br> </h1>
-            <h5 id="currentTime"> The current local time is </h5>
-            <script> document.getElementById("currentTime").innerHTML = weatherLocationParsed.location.localtime </script>
+            <img id="weatherImage" src="" alt="">
+            <h1 id="locationHeader"></h1>
+            <h2 id="country"> </h2>
+            <h2 id="locationCurrent"> </h2>
+            <h5 id="currentTime"> </h5>
         </div>
         <div class="weatherdata">
             <div id="forecast" class="pt-sm-5">
-                <h2 id="locationCurrent"> <script> document.getElementById("locationCurrent").innerHTML = weatherCurrentParsed.current.condition.text; </script> </h2>
-                <h5> Wind Direction </h5> <h6 id="windDir"> </h2>
-                <script> document.getElementById("windDir").innerHTML = weatherCurrentParsed.current.wind_dir </script>
-            </div>
-            <div id="weather" class="pt-sm-5">
-                <h2 id="currentTemp"> <script> document.getElementById("currentTemp").innerHTML = weatherCurrentParsed.current.temp_c </script> Degrees Celcius </h2>
-                <h2> Current Wind Speed </h2>
-                <h2 id="currentWind"><script> document.getElementById("currentWind").innerHTML = weatherCurrentParsed.current.wind_kph </script> K/ph </h2>
-                <h2> Relative Humidity </h2>
-                <h2 id="relHumidity"> <script> document.getElementById("relHumidity").innerHTML = weatherCurrentParsed.current.humidity </script> </h2>         
+                <h3 id="windDir"></h3>
+                <h2 id="currentTemp"> </h2>
+                <h2 id="currentWind"> </h2>
+                <h2 id="relHumidity"> </h2>
             </div>
         </div>
-    </div>
-    </div>
 </body>
+
 </html>
