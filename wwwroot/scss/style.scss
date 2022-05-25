@@ -5,6 +5,10 @@ $tabletWidth: 810px;
 $desktopHeight: 1920px;
 $desktopWidth: 1080px;
 
+$primaryColour: rgba(255, 255, 255, 0.338);
+$secondaryColour: rgb(255, 255, 255);
+$secondaryColourTrans: rgba(255, 255, 255, 0.6);
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,29 +22,54 @@ body {
 }
 
 .weatherdata {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: $secondaryColourTrans;
     padding-top: 5%;
     padding-bottom: 5%;
     border-radius: 15px;
+    border: 2px solid $primaryColour;
 }
 
-.h5 {
+a.h5 {
     border-radius: 1em;
 }
 
 .col-4 {
     position: relative;
-    border: 2px solid rgb(192, 191, 191);
-    background-color: rgb(208, 208, 208);
+    border: 2px solid $primaryColour;
+    background-color: $primaryColour;
     padding: 8px 10px 5px 10px;
     border-radius: 5px;
     top: -5px;
 }
 
+label {
+    font-weight: 600;
+}
+
+h3 {
+    padding-bottom: 2%;
+}
+
+#airportSelect {
+    text-align: center;
+    width: 100%;
+    height: 75%;
+    margin-top: 7px;
+}
+
+select option {
+    text-align: center;
+}
+
+#locationCurrent {
+    padding-top: 10%;
+    text-align: center;
+}
+
 #background-banner {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: $secondaryColourTrans;
     z-index: -1;
-    border-bottom: solid 0.2em rgba(192, 191, 191, 1);
+    border-bottom: 1px solid $primaryColour;
     width: 100%;
     height: 3.5em;
 }
@@ -51,11 +80,13 @@ body {
     padding-top: 5%;
     padding-bottom: 5%;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: $secondaryColourTrans;
+    border: 2px solid $primaryColour;
     border-radius: 25px;
 }
 
 #forecast {
+    display: inline-flex;
     margin-top: 5%;
     margin-bottom: 5%;
     text-align: center;
@@ -74,10 +105,6 @@ body {
     padding-left: 5%;
     padding-right: 5%;
 }
-
-/* TODO: Add SCSS to app for dynamic image change with viewport. */
-/* TODO: Make desktop view show all three locations weather at once. */
-/* TODO: Make backend functionality. Start with basic JSON object with data.*/
 
 @media screen and (min-width: 850px) {
     body {

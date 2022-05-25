@@ -16,25 +16,50 @@ body {
   padding-top: 5%;
   padding-bottom: 5%;
   border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.338);
 }
 
-.h5 {
+a.h5 {
   border-radius: 1em;
 }
 
 .col-4 {
   position: relative;
-  border: 2px solid #c0bfbf;
-  background-color: #d0d0d0;
+  border: 2px solid rgba(255, 255, 255, 0.338);
+  background-color: rgba(255, 255, 255, 0.338);
   padding: 8px 10px 5px 10px;
   border-radius: 5px;
   top: -5px;
 }
 
+label {
+  font-weight: 600;
+}
+
+h3 {
+  padding-bottom: 2%;
+}
+
+#airportSelect {
+  text-align: center;
+  width: 100%;
+  height: 75%;
+  margin-top: 7px;
+}
+
+select option {
+  text-align: center;
+}
+
+#locationCurrent {
+  padding-top: 10%;
+  text-align: center;
+}
+
 #background-banner {
   background-color: rgba(255, 255, 255, 0.6);
   z-index: -1;
-  border-bottom: solid 0.2em #c0bfbf;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.338);
   width: 100%;
   height: 3.5em;
 }
@@ -46,10 +71,14 @@ body {
   padding-bottom: 5%;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.338);
   border-radius: 25px;
 }
 
 #forecast {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   margin-top: 5%;
   margin-bottom: 5%;
   text-align: center;
@@ -68,9 +97,6 @@ body {
   padding-right: 5%;
 }
 
-/* TODO: Add SCSS to app for dynamic image change with viewport. */
-/* TODO: Make desktop view show all three locations weather at once. */
-/* TODO: Make backend functionality. Start with basic JSON object with data.*/
 @media screen and (min-width: 850px) {
   body {
     background: url("../img/tobias-keller-73F4pKoUkM0-unsplash.jpg") no-repeat center fixed;

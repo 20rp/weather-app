@@ -1,40 +1,98 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(function() {
 
-// Write your JavaScript code.
+    let airportCode = $("#airportSelect").find(":selected").val();
+    console.log(airportCode);
+
+    $("#airportSelect").change(function() {
+        location.reload();
+        
+    });
+
+    let apiUrl = "http://api.weatherapi.com/v1/current.json?key=5068a32470324e3b963231912221905&q=" + airportCode + "&aqi=no";
+
+    $.ajax({
+        url: apiUrl,
+        context: document.body
+    }).done(function(result) {
+        $("#weatherImage").attr("src", result.current.condition.icon);
+        $("#locationHeader").text(result.location.name);
+        $("#country").text(result.location.country);
+        $("#locationCurrent").text(result.current.condition.text);
+        $("#currentTime").text(result.location.localtime);
+
+        $("#windDir").text(result.current.wind_dir);
+        $("#currentTemp").text(result.current.temp_c);
+        $("#currentTemp").append("°C");
+        $("#currentWind").text(result.current.wind_kph);
+        $("#currentWind").append(" km/h")
+        $("#relHumidity").text(result.current.humidity);
+        $("#relHumidity").append("%");
+    });
 
 
-// const requestURL = "test_response.json";
-// const jsonObject = JSON.parse(requestURL);
-// console.log(jsonObject);
+
+    // let _res;
+    // let locationName = "Paris";
+    // let airports = ["AKL", "WLG", "CHC", "ZQN", "HLZ"];
+
+    // let apiUrl = "http://api.weatherapi.com/v1/current.json?key=5068a32470324e3b963231912221905&q=" + airports[0] + "&aqi=no";
+
+    // for (index = 0; index < airports.length; index++) {
+    //     let apiUrl = "http://api.weatherapi.com/v1/current.json?key=5068a32470324e3b963231912221905&q=" + airports[index] + "&aqi=no";
+    //     // callApi();
+    //     console.log(apiUrl);
+    // }
+
+    // console.log(apiUrl);
+
+    // function callApi() {
+    //         const weatherCall = async () => {
+    //         // let _res;
+    //         try {
+    //             const res = await fetch(apiUrl);
+    //             _res = await res.json();
+    //         } catch {
+    //             throw new Error("Error, call did not succeed");
+    //         }
+    //         return _res;
+    //     }
+    // }
 
 
-// const obj = JSON.parse('{ "location": { "name": "Taradale", "region": "Hawkes Bay", "localtime": "2022-05-20 11:23"}}');
+    // $(document).ready(function() {
+        
+    // });
 
-// const weatherLocation = '{ "location": {"name": "Taradale", "region": "", "country": "New Zealand", "lat": -39.53, "lon": 176.85, "tz_id": "Pacific/Auckland", "localtime_epoch": 1653002605, "localtime": "2022-05-20 11:23"}}';
-// const weatherCurrent = '{ "current": { "last_updated_epoch": 1653002100, "last_updated": "2022-05-20 11:15", "temp_c": 16.8, "temp_f": 62.2, "is_day": 1, "condition": { "text": "Sunny", "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png", "code": 1000}, "wind_mph": 18.8, "wind_kph": 30.2, "wind_degree": 316, "wind_dir": "NW", "pressure_mb": 1002.0, "pressure_in": 29.6, "precip_mm": 0.0, "precip_in": 0.0, "humidity": 56, "cloud": 19, "feelslike_c": 16.8, "feelslike_f": 62.2, "vis_km": 10.0, "vis_miles": 6.0, "uv": 5.0, "gust_mph": 26.4, "gust_kph": 42.5 }}';
+    // $.ajax({})
+    
 
-// weatherLocationParsed = JSON.parse(weatherLocation);
-// weatherCurrentParsed = JSON.parse(weatherCurrent);
-// console.log(weatherCurrentParsed);
+    // weatherCall().then(res => {
+    //     document.getElementById("locationHeader").innerText = res.location.name;
+    //     document.getElementById("locationHeader").append(", " + res.location.region)
+
+    //     document.getElementById("country").innerText = res.location.country;
+
+    //     document.getElementById("currentTime").innerText = res.location.localtime;
+    //     document.getElementById("currentTime").prepend("The current local time is: ");
 
 
+    //     document.getElementById("weatherImage").src = res.current.condition.icon;
 
-function getData() {
+    //     document.getElementById("currentTemp").innerText = res.current.temp_c;
+    //     document.getElementById("currentTemp").append(" Degrees Celcius");
 
-    let result = '';
 
-    const apiUrl = "http://api.weatherapi.com/v1/current.json?key=5068a32470324e3b963231912221905&q=Taradale&aqi=no";
-    const myRequest = new Request(apiUrl);
-    fetch(myRequest).then(res => res.json().then(result => console.log(result)));
+    //     document.getElementById("locationCurrent").innerText = res.current.condition.text;
+    //     document.getElementById("windDir").innerText = res.current.wind_dir;
+    //     document.getElementById("windDir").prepend("Wind Direction: ");
 
-    document.getElementById("locationHeader").innerHTML = result.location.name;
+    //     document.getElementById("currentWind").innerText = res.current.wind_kph;
+    //     document.getElementById("currentWind").prepend("Wind speed: ");
+    //     document.getElementById("currentWind").append(" K/ph");
 
-    return result;
-}
-getData();
-
-function aysnc populateElements() {
-    await document.getElementById("demo").innerHTML = result.location.name;
-}
+    //     document.getElementById("relHumidity").innerText = res.current.humidity;
+    //     document.getElementById("relHumidity").prepend("Relative Humidity: ");
+    //     document.getElementById("relHumidity").append("%");
+    // })
+});
 
