@@ -16,6 +16,7 @@
     }).done(function(result) {
         $("#weatherImage").attr("src", result.current.condition.icon);
         $("#locationHeader").text(result.location.name);
+        $("#locationHeader").append(",");
         $("#country").text(result.location.country);
         $("#locationCurrent").text(result.current.condition.text);
         $("#lastUpdated").text(result.current.last_updated);
@@ -27,6 +28,7 @@
         $("#currentWind").append(" km/h")
         $("#relHumidity").text(result.current.humidity);
         $("#relHumidity").append("%");
+        $("#precip").text(result.current.precip_mm);
     });
 });
 
