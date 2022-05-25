@@ -21,7 +21,7 @@ body {
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 
-.weatherdata {
+.weatherData {
     background-color: $secondaryColourTrans;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -48,6 +48,10 @@ label {
 
 h3 {
     padding-bottom: 2%;
+}
+
+div.row {
+    display: contents;
 }
 
 #airportSelect {
