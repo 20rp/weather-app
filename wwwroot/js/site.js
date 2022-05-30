@@ -2,7 +2,7 @@
 
     let airportCode = $("#airportSelect").find(":selected").val();
     let airports = ["akl", "wlg", "chc", "zqn", "hlz", "npe"];
-    let airportsReturned = [];
+    let airportArray = [];
     let viewPortWidth = window.innerWidth;
 
     $("#airportSelect").change(function() {
@@ -19,11 +19,10 @@
             url: url,
             context: document.body
         }).done(function(resultArray) {
-            airportsReturned.push(resultArray);
+            airportArray.push(resultArray);
+            console.log(airportArray[i].location.name);
         });
     }
-
-    console.log(airportsReturned);
 
     $.ajax({
         url: apiUrl,
