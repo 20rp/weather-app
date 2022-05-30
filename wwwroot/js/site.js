@@ -1,7 +1,9 @@
 ﻿$(document).ready(function() {
 
     let airportCode = $("#airportSelect").find(":selected").val();
-    console.log(airportCode);
+    let airports = ["akl", "wlg", "chc", "zqn", "hlz", "npe"];
+    let airportsReturned = [];
+    let viewPortWidth = window.innerWidth;
 
     $("#airportSelect").change(function() {
         location.reload();
@@ -9,6 +11,19 @@
     });
 
     let apiUrl = "http://api.weatherapi.com/v1/current.json?key=5068a32470324e3b963231912221905&q=" + airportCode + "&aqi=no";
+
+    for (i = 0; i < airports.length; i++) {
+        let url = "https://api.weatherapi.com/v1/current.json?key=5068a32470324e3b963231912221905&q=" + airports[i] + "&aqi=no";
+        
+        $.ajax({
+            url: url,
+            context: document.body
+        }).done(function(resultArray) {
+            airportsReturned.push(resultArray);
+        });
+    }
+
+    console.log(airportsReturned);
 
     $.ajax({
         url: apiUrl,

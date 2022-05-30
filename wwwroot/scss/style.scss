@@ -21,7 +21,7 @@ body {
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 
-.weatherData {
+#weatherData {
     background-color: $secondaryColourTrans;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -89,6 +89,30 @@ select option {
     border-radius: 25px;
 }
 
+#location2 {
+    @extend #location;
+}
+
+#location3 {
+    @extend #location;
+}
+
+#weatherData2 {
+    @extend #weatherData;
+}
+
+#weatherData3 {
+    @extend #weatherData;
+}
+
+#weather-panel-top {
+    display: flex;
+}
+
+#weather-panel-bottom {
+    display: flex;
+}
+
 #forecast {
     display: inline-flex;
     margin-top: 5%;
@@ -114,5 +138,20 @@ select option {
     body {
         background: url('../img/tobias-keller-73F4pKoUkM0-unsplash.jpg') no-repeat center fixed;
         background-size: cover;
+    }
+}
+
+@media screen and (min-width: 850px) {
+
+    #background-banner {
+        display: none;
+    }
+
+    #location {
+        width: 30%;
+    }
+    
+    #weatherData {
+        width: 30%;
     }
 }
