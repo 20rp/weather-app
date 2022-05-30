@@ -131,4 +131,13 @@ select option {
     width: 30%;
   }
 }
+
+@media screen and (max-width: 850px) {
+  #location2, #location3 {
+    display: none;
+  }
+  #weatherData2, #weatherData3 {
+    display: none;
+  }
+}
 /*# sourceMappingURL=style.css.map */
