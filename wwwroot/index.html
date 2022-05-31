@@ -14,6 +14,7 @@
 
 </head>
 <body>
+    <p id="demo"></p>
     <div id="background-banner">
         <select name="airports" id="airportSelect">
             <option value="akl"> Auckland International Airport</option>
@@ -24,7 +25,7 @@
             <option value="npe"> Hawke's Bay Airport </option>
         </select>
     </div>
-    <div id="weather-panel-top">
+    <div id="weather-panel-top" class="container-fluid">
         <div id="location" class="">
             <div class="row">
                 <img id="weatherImage" src="" alt="">
@@ -59,23 +60,23 @@
             </div>
         </div>
     </div>
-    <div id="weather-panel-bottom">
+    <div id="weather-panel-bottom" class="container-fluid">
         <div id="weatherData">
             <h3 id="locationCurrent"> </h3>
             <div id="forecast" class="container">
-                <div class="col-sm" style="text-align: left; padding-bottom: 10%;">
+                <div class="col-sm" style="text-align: left;">
                     <label for="windDir"> Wind Direction: </label>
                     <label for="currentTemp"> Current Temperature: </label>
                     <label for="currentWind"> Current Wind Speed: </label>
                     <label for="relHumidity"> Relative Humidity: </label>
                     <label for="precip">Precipitation mm</label>
                 </div>
-                <div class="col-sm" style="padding-bottom: 10%; text-align: right;">
-                    <h3 id="windDir"></h3>
-                    <h3 id="currentTemp"> </h3>
-                    <h3 id="currentWind"> </h3>
-                    <h3 id="relHumidity"> </h3>
-                    <h3 id="precip"> </h3>
+                <div id="current-info" class="col-sm" style="text-align: right;">
+                    <h4 id="windDir"></h4>
+                    <h4 id="currentTemp"> </h4>
+                    <h4 id="currentWind"> </h4>
+                    <h4 id="relHumidity"> </h4>
+                    <h4 id="precip"> </h4>
                 </div>
             </div>
         </div>
@@ -89,31 +90,31 @@
                     <label for="relHumidity2"> Relative Humidity: </label>
                     <label for="precip2">Precipitation mm</label>
                 </div>
-                <div class="col-sm" style="padding-bottom: 10%;">
-                    <h3 id="windDir2"></h3>
-                    <h3 id="currentTemp2"> </h3>
-                    <h3 id="currentWind2"> </h3>
-                    <h3 id="relHumidity2"> </h3>
-                    <h3 id="precip2"> </h3>
+                <div class="col-sm">
+                    <h4 id="windDir2"></h4>
+                    <h4 id="currentTemp2"> </h4>
+                    <h4 id="currentWind2"> </h4>
+                    <h4 id="relHumidity2"> </h4>
+                    <h4 id="precip2"> </h4>
                 </div>
             </div>
         </div>
         <div id="weatherData3">
             <h3 id="locationCurrent3"> </h3>
             <div id="forecast3" class="container">
-                <div class="col-sm" style="text-align: left; padding-bottom: 10%;">
+                <div class="col-sm" style="text-align: left;">
                     <label for="windDir3"> Wind Direction: </label>
                     <label for="currentTemp3"> Current Temperature: </label>
                     <label for="currentWind3"> Current Wind Speed: </label>
                     <label for="relHumidity3"> Relative Humidity: </label>
                     <label for="precip3">Precipitation mm</label>
                 </div>
-                <div class="col-sm" style="padding-bottom: 10%; text-align: right;">
-                    <h3 id="windDir3"></h3>
-                    <h3 id="currentTemp3"> </h3>
-                    <h3 id="currentWind3"> </h3>
-                    <h3 id="relHumidity3"> </h3>
-                    <h3 id="precip3"> </h3>
+                <div class="col-sm" style="text-align: right;">
+                    <h4 id="windDir3"></h4>
+                    <h4 id="currentTemp3"> </h4>
+                    <h4 id="currentWind3"> </h4>
+                    <h4 id="relHumidity3"> </h4>
+                    <h4 id="precip3"> </h4>
                 </div>
             </div>
         </div>

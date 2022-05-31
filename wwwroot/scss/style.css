@@ -8,13 +8,12 @@
 body {
   background: url("../img/lighthouse-93488_1280.jpg") no-repeat center fixed;
   background-size: cover;
-  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 
 #weatherData, #weatherData2, #weatherData3 {
   background-color: rgba(255, 255, 255, 0.6);
-  padding-top: 5%;
-  padding-bottom: 5%;
+  margin-left: 45px;
+  margin-right: 5px;
   border-radius: 15px;
   border: 2px solid rgba(255, 255, 255, 0.338);
 }
@@ -23,25 +22,17 @@ a.h5 {
   border-radius: 1em;
 }
 
-.col-4 {
-  position: relative;
-  border: 2px solid rgba(255, 255, 255, 0.338);
-  background-color: rgba(255, 255, 255, 0.338);
-  padding: 8px 10px 5px 10px;
-  border-radius: 5px;
-  top: -5px;
+div.row {
+  display: contents;
 }
 
 label {
+  margin-bottom: 20px;
   font-weight: 600;
 }
 
-h3 {
-  padding-bottom: 2%;
-}
-
-div.row {
-  display: contents;
+#current-info {
+  margin-bottom: 50px;
 }
 
 #airportSelect {
@@ -69,10 +60,9 @@ select option {
 }
 
 #location, #location2, #location3 {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  margin-left: 45px;
+  margin-right: 5px;
+  margin-bottom: 55px;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.6);
   border: 2px solid rgba(255, 255, 255, 0.338);
@@ -103,14 +93,6 @@ select option {
   padding-top: 10%;
   padding-bottom: 5%;
   border-radius: 25px;
-}
-
-#weather {
-  margin-top: 30%;
-  margin-bottom: 20%;
-  text-align: center;
-  padding-left: 5%;
-  padding-right: 5%;
 }
 
 @media screen and (min-width: 850px) {
