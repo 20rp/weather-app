@@ -10,7 +10,7 @@ body {
   background-size: cover;
 }
 
-#weatherData, #weatherData2, #weatherData3 {
+#weather-data, #weather-data2, #weather-data3 {
   background-color: rgba(255, 255, 255, 0.6);
   margin-left: 45px;
   margin-right: 5px;
@@ -31,10 +31,6 @@ label {
   font-weight: 600;
 }
 
-#current-info {
-  margin-bottom: 50px;
-}
-
 #airportSelect {
   text-align: center;
   width: 100%;
@@ -52,6 +48,8 @@ select option {
 }
 
 #background-banner {
+  position: length;
+  top: 0px;
   background-color: rgba(255, 255, 255, 0.6);
   z-index: -1;
   border-bottom: 1px solid rgba(255, 255, 255, 0.338);
@@ -86,13 +84,18 @@ select option {
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
   text-align: center;
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 10%;
   padding-bottom: 5%;
   border-radius: 25px;
+}
+
+.dyn-weather {
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 @media screen and (min-width: 850px) {
@@ -109,7 +112,7 @@ select option {
   #location, #location2, #location3 {
     width: 30%;
   }
-  #weatherData, #weatherData2, #weatherData3 {
+  #weather-data, #weather-data2, #weather-data3 {
     width: 30%;
   }
 }
@@ -118,7 +121,7 @@ select option {
   #location2, #location3 {
     display: none;
   }
-  #weatherData2, #weatherData3 {
+  #weather-data2, #weather-data3 {
     display: none;
   }
 }

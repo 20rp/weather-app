@@ -20,7 +20,7 @@ body {
     background-size: cover;
 }
 
-#weatherData {
+#weather-data {
     background-color: $secondaryColourTrans;
     margin-left: 45px;
     margin-right: 5px;
@@ -42,10 +42,6 @@ label {
 
 }
 
-#current-info {
-    margin-bottom: 50px;
-}
-
 #airportSelect {
     text-align: center;
     width: 100%;
@@ -63,6 +59,8 @@ select option {
 }
 
 #background-banner {
+    position: length;
+    top: 0px;
     background-color: $secondaryColourTrans;
     z-index: -1;
     border-bottom: 1px solid $primaryColour;
@@ -88,12 +86,14 @@ select option {
     @extend #location;
 }
 
-#weatherData2 {
-    @extend #weatherData;
+#weather-data2 {
+    @extend #weather-data
+;
 }
 
-#weatherData3 {
-    @extend #weatherData;
+#weather-data3 {
+    @extend #weather-data
+;
 }
 
 #weather-panel-top {
@@ -107,7 +107,7 @@ select option {
 #forecast {
     display: inline-flex;
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
     text-align: center;
     padding-left: 5%;
     padding-right: 5%;
@@ -115,6 +115,11 @@ select option {
     padding-bottom: 5%;
     border-radius: 25px;
 
+}
+
+.dyn-weather {
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 @media screen and (min-width: 850px) {
@@ -134,18 +139,22 @@ select option {
         width: 30%;
     }
     
-    #weatherData {
+    #weather-data {
         width: 30%;
     }
 }
 
 @media screen and (max-width: 850px) {
+
+    #weather-panel-top {
+
+    }
     
     #location2, #location3 {
         display: none;
     }
 
-    #weatherData2, #weatherData3 {
+    #weather-data2, #weather-data3 {
         display: none;
     }
 }
