@@ -106,20 +106,18 @@ select option {
 }
 
 @media screen and (min-width: 850px) {
+  #background-banner {
+    border-bottom: 0px rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
+    margin-left: 100px;
+    margin-bottom: 30px;
+    width: 25%;
+  }
   #location, #location2, #location3 {
     width: 30%;
   }
   #weather-data, #weather-data2, #weather-data3 {
     width: 30%;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  #location2, #location3 {
-    display: none;
-  }
-  #weather-data2, #weather-data3 {
-    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
