@@ -11,7 +11,7 @@ body {
 }
 
 #weather-data, #weather-data2, #weather-data3 {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.382);
   margin-left: 45px;
   margin-right: 5px;
   border-radius: 15px;
@@ -50,7 +50,7 @@ select option {
 #background-banner {
   position: length;
   top: 0px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.382);
   z-index: -1;
   border-bottom: 1px solid rgba(255, 255, 255, 0.338);
   width: 100%;
@@ -62,7 +62,7 @@ select option {
   margin-right: 5px;
   margin-bottom: 55px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.382);
   border: 2px solid rgba(255, 255, 255, 0.338);
   border-radius: 25px;
 }
@@ -98,14 +98,39 @@ select option {
   margin-bottom: 15px;
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 500px) {
   body {
     background: url("../img/tobias-keller-73F4pKoUkM0-unsplash.jpg") no-repeat center fixed;
     background-size: cover;
   }
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  #background-banner {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+  }
+  #location, #location2, #location3 {
+    position: static;
+    margin-right: 45px;
+    margin-top: 70px;
+    width: 110%;
+  }
+  #weather-panel-bottom {
+    position: fixed;
+    right: 17px;
+  }
+  #forecast {
+    width: 100%;
+    padding-bottom: 0;
+  }
+  div label, div h4 {
+    margin-bottom: 1px;
+  }
+}
+
+@media screen and (min-width: 800px) {
   #background-banner {
     border-bottom: 0px rgba(255, 255, 255, 0);
     background-color: rgba(255, 255, 255, 0);

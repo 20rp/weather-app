@@ -7,7 +7,7 @@ $desktopWidth: 1080px;
 
 $primaryColour: rgba(255, 255, 255, 0.338);
 $secondaryColour: rgb(255, 255, 255);
-$secondaryColourTrans: rgba(255, 255, 255, 0.6);
+$secondaryColourTrans: rgba(255, 255, 255, 0.382);
 
 * {
     box-sizing: border-box;
@@ -122,14 +122,44 @@ select option {
     margin-bottom: 15px;
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 500px) {
     body {
         background: url('../img/tobias-keller-73F4pKoUkM0-unsplash.jpg') no-repeat center fixed;
         background-size: cover;
     }
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 0px ) and (max-width: 500px){
+    #background-banner {
+        position: fixed;
+        z-index: -1;
+        top: 0;
+    }
+
+    #location {
+        position: static;
+        margin-right: 45px;
+        margin-top: 70px;
+        width: 110%;
+    }
+
+    #weather-panel-bottom {
+        position: fixed;
+        right: 17px;
+    }
+
+    #forecast {
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    div label, div h4 {
+        margin-bottom: 1px;
+        // font-weight: 500;
+    }
+}
+
+@media screen and (min-width: 800px) {
 
     #background-banner {
         border-bottom: 0px rgba(255, 255, 255, 0);

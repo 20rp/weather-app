@@ -22,20 +22,11 @@
                 airportArray.push(resultArray);
                 console.log(airportArray.filter);
             });
-
         }
 
         return airportArray;
     }
-
-    function buildObj() {
-
-    }
-
     callApi();
-
-
-    console.log(airportArray);
 
     $.ajax({
         url: apiUrl,
