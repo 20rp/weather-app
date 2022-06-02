@@ -10,21 +10,32 @@
     });
 
     let apiUrl = "http://api.weatherapi.com/v1/current.json?key=5068a32470324e3b963231912221905&q=" + airportCode + "&aqi=no";
+   
+    function callApi() {
+        for (i = 0; i < airports.length; i++) {
+            let url = "https://api.weatherapi.com/v1/current.json?key=5068a32470324e3b963231912221905&q=" + airports[i] + "&aqi=no";
+            
+            $.ajax({
+                url: url,
+                context: document.body
+            }).done(function(resultArray) {
+                airportArray.push(resultArray);
+                console.log(airportArray.filter);
+            });
 
-    for (i = 0; i < airports.length; i++) {
-        let url = "https://api.weatherapi.com/v1/current.json?key=5068a32470324e3b963231912221905&q=" + airports[i] + "&aqi=no";
-        
-        $.ajax({
-            url: url,
-            context: document.body
-        }).done(function(resultArray) {
-            airportArray.push(resultArray);
-        });
+        }
+
+        return airportArray;
     }
+
+    function buildObj() {
+
+    }
+
+    callApi();
 
 
     console.log(airportArray);
-    // $("#demo").append(airportArray.current);
 
     $.ajax({
         url: apiUrl,
